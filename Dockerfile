@@ -2,10 +2,9 @@ FROM python:3.8.11-slim-buster
 
 WORKDIR /app
 
-RUN pip install streamlit
-
-COPY *.py /app/
+COPY . .
+RUN pip install -r requirements.txt
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "hello.py"]
+CMD ["streamlit", "run", "main.py"]
